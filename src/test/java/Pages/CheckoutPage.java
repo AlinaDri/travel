@@ -38,6 +38,7 @@ public class CheckoutPage extends HotelDetailsPage{
     }
 
     public void CheckPurchasePage(){
+        waitUntilElementIsDisplayed(totalTitle,visible);
         totalTitle.shouldBe(visible);
         roomReservation.shouldBe(visible);
     }
