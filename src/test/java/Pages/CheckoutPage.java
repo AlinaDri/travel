@@ -1,6 +1,5 @@
 package Pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import lombok.Data;
 
@@ -35,6 +34,7 @@ public class CheckoutPage extends HotelDetailsPage{
         checkOutLastName.sendKeys("Doe");
         checkOutMobileNumber.sendKeys("1188");
         checkOutEmail.sendKeys("alina.driksmane+"+ System.currentTimeMillis() +"@testdevlab.com");
+
     }
 
     public void CheckPurchasePage(){

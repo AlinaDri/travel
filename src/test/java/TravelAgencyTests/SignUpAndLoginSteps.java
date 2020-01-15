@@ -27,6 +27,7 @@ public class SignUpAndLoginSteps {
 
     @And("I click on {string}")
     public void iClick(String button) {
+        waitUntilElementIsDisplayed(signUpPage.getButtonByText(button), visible);
         signUpPage.getButtonByText(button).click();
     }
 
