@@ -12,22 +12,22 @@ import static com.codeborne.selenide.Condition.visible;
 @Data
 public class SignUpPage extends HomePage{
 
-    private SelenideElement firstNameInput = $(byName("firstname"));
-    private SelenideElement lastNameInput = $(byName("lastname"));
-    private SelenideElement mobileNumberInput = $(byName("phone"));
-    private SelenideElement emailInput = $(byName("email"));
-    private SelenideElement passwordInput = $(byName("password"));
-    private SelenideElement confirmPasswordInput = $(byName("confirmpassword"));
+    private SelenideElement firstName = $(byName("firstname"));
+    private SelenideElement lastName = $(byName("lastname"));
+    private SelenideElement mobileNumber = $(byName("phone"));
+    private SelenideElement email = $(byName("email"));
+    private SelenideElement password = $(byName("password"));
+    private SelenideElement confirmPassword = $(byName("confirmpassword"));
+    private String generatedEmail = "alina.driksmane+"+ System.currentTimeMillis() +"@testdevlab.com";
 
     public void FillInRegistrationForm(){
-        waitUntilElementIsDisplayed(firstNameInput, visible);
-        firstNameInput.sendKeys("John");
-        lastNameInput.sendKeys("Doe");
-        mobileNumberInput.sendKeys("1188");
-        emailInput.sendKeys("alina.driksmane+"+ System.currentTimeMillis() +"@testdevlab.com");
-        passwordInput.sendKeys("parole");
-        confirmPasswordInput.sendKeys("parole");
+        waitUntilElementIsDisplayed(firstName, visible);
+        firstName.sendKeys("John");
+        lastName.sendKeys("Doe");
+        mobileNumber.sendKeys("1188");
+        email.sendKeys(generatedEmail);
+        password.sendKeys("parole");
+        confirmPassword.sendKeys("parole");
     }
-
 
 }

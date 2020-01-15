@@ -92,9 +92,6 @@
                     </argLine>
                     <forkCount>2</forkCount>
                     <reuseForks>true</reuseForks>
-<!--                    <includes>-->
-<!--                        <include>**/Test*.class</include>-->
-<!--                    </includes>-->
                     <reportsDirectory>target/surefire-reports-${surefire.forkNumber}</reportsDirectory>
                     <systemPropertyVariables>
                         <allure.results.directory>target/allure-results</allure.results.directory>

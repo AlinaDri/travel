@@ -1,5 +1,6 @@
 package TravelAgencyTests;
 
+import Pages.AccountPage;
 import Pages.SignUpPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -7,10 +8,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class SignUpAndLoginSteps {
-   private SignUpPage signUpPage = new SignUpPage();
+   private AccountPage signUpPage = new AccountPage();
 
     @Given("I am in Sign Up page")
     public void iAmInSignUpPage() {
@@ -26,7 +26,6 @@ public class SignUpAndLoginSteps {
     @And("I click on {string}")
     public void iClick(String button) {
         signUpPage.getButtonByText(button).click();
-        sleep(5000);
     }
 
     @And("My Account page is open")
@@ -46,12 +45,16 @@ public class SignUpAndLoginSteps {
 
     @And("Correct personal information is displayed")
     public void correctPersonalInformationIsDisplayed() {
+        signUpPage.CheckPersonalInformation();
     }
 
     @Given("I have account created")
     public void iHaveAccountCreated() {
         open("https://www.phptravels.net/home");
         signUpPage.NavigateToSignUpPage();
-
+        signUpPage.FillInRegistrationForm();
+        signUpPage.getButtonByText("Sign Up").click();
+        signUpPage.getItemByText("My Profile").click();
+        signUpPage.CheckPersonalInformation();
     }
 }
