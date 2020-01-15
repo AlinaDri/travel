@@ -7,6 +7,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import static TravelAgencyTests.HelperFunctions.waitUntilElementIsDisplayed;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SignUpAndLoginSteps {
@@ -54,6 +56,7 @@ public class SignUpAndLoginSteps {
         signUpPage.NavigateToSignUpPage();
         signUpPage.FillInRegistrationForm();
         signUpPage.getButtonByText("Sign Up").click();
+        waitUntilElementIsDisplayed(signUpPage.getItemByText("My Profile"),visible);
         signUpPage.getItemByText("My Profile").click();
         signUpPage.CheckPersonalInformation();
     }
